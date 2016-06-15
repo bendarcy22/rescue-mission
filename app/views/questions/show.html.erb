@@ -1,0 +1,22 @@
+<h3><%= @question.title %></h3>
+
+
+  <%= markdown(@question.description) %>
+  <br>
+  <%= link_to 'Edit the question', edit_question_path(@question) %>
+  <br>
+  <%= link_to 'Delete', question_path(@question), method: :delete %>
+​
+
+  <ul>
+    <% @answer_to_question.each do |answer| %>
+    <li>
+      <%= markdown(answer.description) %>
+    </li>
+    <% end %>
+
+  </ul>
+
+<%= render partial: "answers/form_answer" %>
+
+<%= link_to "Question Page", questions_path %>

@@ -1,0 +1,22 @@
+<%= form_for(@question, html: { class: 'new_question', id: 'new_question' }) do |f| %>
+
+
+  <div>
+    <%= f.label :title %>
+    <div>
+      <%= f.text_field :title %>
+    </div>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <div>
+      <%= f.text_area :description %>
+    </div>
+  </div>
+
+  <div>
+    <%= f.submit 'Submit' %>
+    <%= link_to 'Back', questions_path %>
+  </div>
+<% end %>
